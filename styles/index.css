@@ -24,6 +24,17 @@ body {
     margin-right: 15px;
 }
 
+#clipboardMessage {
+    user-select: none;
+    background-color: #04c41481;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 1px 10px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.15s,
+}
 .switch {
     margin-left: 15px;
     position: relative;

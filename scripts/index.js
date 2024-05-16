@@ -23,6 +23,7 @@ const eyeDropperButton = document.getElementById('eyedropper-button');
 const currentPaletteDisplay = document.getElementById('current-palette');
 const collection = document.getElementById('palette-collection');
 const functionDiv = document.getElementById('picker');
+const clipboardMessage = document.getElementById('clipboardMessage');
 
 let useHex = false;
 
@@ -65,8 +66,42 @@ addButton.addEventListener('click', () => {
     renderCollection();
 });
 
+function copyToClipboard() {
+    let allColours = document.getElementById('palette-collection').querySelectorAll('.palette-colour');
+    allColours.forEach((container) => {
+        let thisColour = splitRGBtoHex(container.style.backgroundColor);
+
+        container.addEventListener('click', async () => {
+            navigator.clipboard.writeText(thisColour.substring(1));
+
+            opacityAnimation();
+        });
+
+    });
+}
+
+async function opacityAnimation() {
+    clipboardMessage.style.opacity = 1;
+    await new Promise(r => setTimeout(r, 500));
+    let id = null;
+    let opacity = 1;
+    clearInterval(id);
+    id = setInterval(frame, 3);
+    function frame() {
+        if (opacity <= 0) {
+            clipboardMessage.style.opacity = 0;
+            clearInterval(id);
+        } else {
+            opacity -= 0.01;
+            clipboardMessage.style.opacity = opacity;
+        }
+    }
+    console.log(id);
+}
+
 renderCollection();
 renderSelectedPalette();
+
 
 function hexFunction() {
     functionDiv.innerHTML =
@@ -144,6 +179,7 @@ function renderCollection() {
 
     collection.innerHTML = totalHTML;
     paletteFunctions();
+    copyToClipboard();
 }
 
 function renderPalette(palette) {
@@ -164,15 +200,19 @@ function getCurrentColours() {
     let colourDisplays = currentPaletteDisplay.querySelectorAll('.palette-colour');
     let colours = [];
     colourDisplays.forEach((colour) => {
-        let rgb = colour.style.backgroundColor.replace(/[^\d,]/g, '').split(',');
-        let r = parseInt(rgb[0]);
-        let g = parseInt(rgb[1]);
-        let b = parseInt(rgb[2]);
-        colours.push(rgbToHex(r, g, b).toUpperCase());
+        let hexString = splitRGBtoHex(colour.style.backgroundColor);
+        colours.push(hexString);
     });
     return colours;
 }
 
+function splitRGBtoHex(value) {
+    let rgb = value.replace(/[^\d,]/g, '').split(',');
+    let r = parseInt(rgb[0]);
+    let g = parseInt(rgb[1]);
+    let b = parseInt(rgb[2]);
+    return rgbToHex(r, g, b).toUpperCase();
+}
 
 
 function paletteFunctions() {

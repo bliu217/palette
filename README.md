@@ -1,6 +1,6 @@
 # Welcome to *palette*! (wip)
 ### What is *palette*?
-Palette is a chrome extension that:
+Palette is a **Chrome extension** that:
 - allows you to easily sample and save colours from the web into colour palettes via the EyeDropper tool
 - edit palettes based on HEX and RGB values, or from a colour wheel
 - save palettes for later reference

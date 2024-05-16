@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+</head>
+
+<body>
+    <div class="header-el">
+        <!-- <button class="new-palette-button js-new-palette-button">+</button> -->
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <!-- <img id="clipboardIcon" src="assets/copy.png"> -->
+        <img src="assets/logo-full.png">
+    </div>
+
+    <div class="main-container">
+        <div class="editor-container">
+            <div class="tool-container">
+                <div id="save-button">
+                    <img src="assets/save.png">
+                </div>
+                <div id="eyedropper-button">
+                    <img src="assets/dropper.png">
+                </div>
+                <div id="change-function-button">
+                    <img src="assets/hashtag.png">
+                </div>
+                <div id="add-button">
+                    <img src="assets/add.png">
+                </div>
+
+            </div>
+            <div class="editor-el">
+                <div class="edit-color-text">Edit Color</div>
+                <div id="picker"></div>
+            </div>
+            <div class="js-current-palette" id="current-palette"></div>
+        </div>
+        <div class="your-collection-text">Your Collection
+            <span class="inner-text">- click a color to copy to clipboard</span>
+        </div>
+        <div id="palette-collection"></div>
+    </div>
+
+
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

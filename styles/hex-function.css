@@ -1,0 +1,45 @@
+#hexFunction {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 7px;
+}
+
+#hexSection,
+#rgbSection,
+#rgbDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+#rgbDiv {
+    gap: 3px;
+}
+
+#hexFunction p {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#hexFunction input {
+    font-family: inherit;
+    box-sizing: border-box;
+    padding: 2px 5px;
+    border-radius: 0;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+#hexV {
+    width: 70px;
+}
+
+#hash {
+    transform: translateX(5px);
+    margin-left: -5px;
+}
+
+.rgbV {
+    width: 40px;
+}

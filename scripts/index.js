@@ -14,6 +14,7 @@ import {
     colorPicker,
     generatePicker
 } from "./picker.js";
+import { getInputs, rgbToHex } from "./hex.js";
 
 const changeFunctionButton = document.getElementById('change-function-button');
 const saveButton = document.getElementById('save-button');
@@ -24,7 +25,6 @@ const collection = document.getElementById('palette-collection');
 const functionDiv = document.getElementById('picker');
 
 let useHex = false;
-let boot = true;
 
 export let selectedColourContainer = {};
 
@@ -43,16 +43,12 @@ changeFunctionButton.addEventListener('click', () => {
         (useHex) ? '<img src="assets/palette.png">' : '<img src="assets/hashtag.png">';
 
     if (useHex) {
-        // console.log('removed: ', colorPicker);
         document.querySelector('.IroColorPicker').remove();
+        hexFunction();
+        getInputs();
     } else {
-        if (boot) {
-            document.querySelector('.editor-el').innerHTML += `<div id="picker"></div>`;
-            boot = false;
-        }
+        document.getElementById('hexFunction').remove();
         generatePicker();
-        // changeColourWithBox();
-        // console.log('added: ', colorPicker);
     }
 
 });
@@ -72,16 +68,32 @@ addButton.addEventListener('click', () => {
 renderCollection();
 renderSelectedPalette();
 
-
-function changeSelectedColour() {
-    // changeColourWithBox();
+function hexFunction() {
+    functionDiv.innerHTML =
+        `
+        <div id="hexFunction">
+            <div id="hexSection">
+                <p>Hex: </p>
+                <p id="hash">#</p>
+                <input class="cV" maxlength = "6" id="hexV" type="text" placeholder="hex">
+            </div>
+            <div>or</div>
+            <div id="rgbSection">
+                <p>RGB: </p>
+                <div id="rgbDiv">
+                    <input class="rgbV cV" maxlength = "3" id="redV" type="text" placeholder="R">
+                    <input class="rgbV cV" maxlength = "3" id="greenV" type="text" placeholder="G">
+                    <input class="rgbV cV" maxlength = "3" id="blueV" type="text" placeholder="B">
+                </div>
+            </div>
+            <p style="font-weight: 500; font-style: italic;">*must enter valid values to work!<p>
+        </div>
+        `;
 }
-
 
 function renderSelectedPalette() {
     currentPaletteDisplay.innerHTML = renderPalette(selectedPalette);
     selectColour();
-    changeSelectedColour();
 
 }
 
@@ -146,15 +158,6 @@ function renderPalette(palette) {
     });
 
     return tempHTML;
-}
-
-function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 function getCurrentColours() {

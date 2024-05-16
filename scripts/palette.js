@@ -3,19 +3,19 @@ import { selectedColourContainer } from "./index.js";
 let defaultPalette = [
     {
         selected: false,
-        colours: ['#7469B6', '#AD88C6', '#E1AFD1', '#FFE6E6']
+        colours: ['#FFE6E6', '#E1AFD1', '#AD88C6', '#7469B6']
     },
     {
         selected: false,
-        colours: ['#7469B6', '#38B000', '#007200', '#004B23']
+        colours: ['#32F3FF', '#27A9B2', '#196C72', '#0F3B3D']
     },
     {
         selected: false,
-        colours: ['#70E000', '#38B000', '#007200', '#004B23']
+        colours: ['#FF6161', '#A63838', '#623232', '#402424']
     },
     {
         selected: false,
-        colours: ['#70E000', '#38B000', '#007200', '#004B23']
+        colours: ['#3CF893', '#37C87A', '#2C995E', '#247047']
     }
 ];
 

@@ -1,7 +1,7 @@
 body {
     font-family: 'Satoshi';
     max-width: 350px;
-    max-height: 500px;
+    min-height: 600px;
     background-color: white;
     margin: 0px;
 }
@@ -24,6 +24,23 @@ body {
     margin-right: 15px;
 }
 
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#footer a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    color: #464646;
+}
+
+#footer a:hover {
+    opacity: 0.65;
+}
 #clipboardMessage {
     user-select: none;
     background-color: #04c41481;
@@ -101,7 +118,7 @@ input:checked+.slider:before {
 .main-container {
     position: relative;
 
-    padding-top: 25px;
+    padding-top: 30px;
 }
 
 .editor-container {
@@ -137,6 +154,7 @@ input:checked+.slider:before {
 
 .edit-color-text,
 .your-collection-text {
+    font-size: 15px;
     font-weight: 700;
 }
 
@@ -151,7 +169,7 @@ input:checked+.slider:before {
 
 
 .inner-text {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
 }
 

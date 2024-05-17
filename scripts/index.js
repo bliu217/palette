@@ -15,6 +15,7 @@ import {
     generatePicker
 } from "./picker.js";
 import { getInputs, rgbToHex } from "./hex.js";
+import { enableDarkMode } from "./dark-mode.js";
 
 const changeFunctionButton = document.getElementById('change-function-button');
 const saveButton = document.getElementById('save-button');
@@ -99,6 +100,7 @@ async function opacityAnimation() {
     console.log(id);
 }
 
+enableDarkMode();
 renderCollection();
 renderSelectedPalette();
 

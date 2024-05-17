@@ -6,7 +6,7 @@ Palette is a **Chrome extension** that allows you to:
 - save palettes for later reference
 - click on created colour palettes to copy to your clipboard
 - download palettes as images to use in other programs such as Photoshop, Illustrator, Figma (wip)
-- light and dark mode to suit your browser theme (wip)
+- light and dark mode to suit your browser theme
 
 ---
 ### Install Instructions

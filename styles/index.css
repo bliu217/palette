@@ -22,6 +22,7 @@ body {
 
 .header-el img {
     margin-right: 15px;
+    margin-top: 6px;
 }
 
 #footer {
@@ -41,6 +42,7 @@ body {
 #footer a:hover {
     opacity: 0.65;
 }
+
 #clipboardMessage {
     user-select: none;
     background-color: #04c41481;
@@ -52,6 +54,7 @@ body {
     opacity: 0;
     transition: opacity 0.15s,
 }
+
 .switch {
     margin-left: 15px;
     position: relative;
@@ -118,7 +121,7 @@ input:checked+.slider:before {
 .main-container {
     position: relative;
 
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .editor-container {
@@ -127,7 +130,7 @@ input:checked+.slider:before {
     justify-content: space-between;
     align-items: top;
     position: relative;
-    height: 230px;
+    height: 215px;
     margin: 0px 10px;
     /* margin-bottom: 20px; */
     /* background-color: aquamarine; */
@@ -135,23 +138,57 @@ input:checked+.slider:before {
 }
 
 .tool-container {
-    margin-top: 1.5rem;
     display: flex;
+    height: 100%;
     flex-direction: column;
+    justify-content: center;
     gap: 10px;
+    /* border: 2px solid black; */
+        background-color: rgb(245, 245, 245);
+        border-radius: 10px;
 }
 
 .tool-container div {
     border: none;
-    background-color: white;
+    background-color: inherit;
     cursor: pointer;
     transition: opacity 0.15s;
+    margin: 0px 5px;
 }
 
+.tool-container img {
+    width: 24px;
+
+}
 .tool-container div:hover {
     opacity: 0.55;
 }
 
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#download-button img {
+    width: 24px;
+
+}
+
+#download-button {
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: opacity 0.15s;
+}
+
+#download-button:hover {
+    opacity: 0.5;
+}
 .edit-color-text,
 .your-collection-text {
     font-size: 15px;
@@ -163,8 +200,7 @@ input:checked+.slider:before {
 }
 
 .your-collection-text {
-    margin-left: 15px;
-    margin-bottom: 10px;
+    margin: 30px 0px 10px 15px;
 }
 
 
@@ -182,7 +218,7 @@ input:checked+.slider:before {
 }
 
 #current-palette {
-    height: 100%;
+    height: 180px;
     width: 90px;
     display: grid;
     grid-template-rows: 45px 45px 45px 45px;
@@ -216,6 +252,11 @@ input:checked+.slider:before {
     padding-right: 15px;
 }
 
+.scrollbar-dark {
+    scrollbar-color: rgb(145, 145, 145) #2B2B2B;
+    background-color: #2B2B2B;
+
+}
 .colour-desc {
     color: white;
     background-color: rgba(0, 0, 0, 0.25);

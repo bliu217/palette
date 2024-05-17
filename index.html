@@ -11,26 +11,28 @@
 <body>
     <div class="header-el">
         <label class="switch">
-            <input type="checkbox">
+            <input id="dark-mode-switch" type="checkbox">
             <span class="slider"></span>
         </label>
         <div id="clipboardMessage">copied to clipboard &#10003</div>
-        <img src="assets/logo-full.png">
+        <div id="logo-el">
+            <img src="assets/logo-full.png">
+            </div>
     </div>
 
     <div class="main-container">
         <div class="editor-container">
             <div class="tool-container">
-                <div id="save-button">
+                <div class="dm-tool" id="save-button">
                     <img src="assets/save.png">
                 </div>
-                <div id="eyedropper-button">
+                <div class="dm-tool" id="eyedropper-button">
                     <img src="assets/dropper.png">
                 </div>
-                <div id="change-function-button">
+                <div class="dm-tool" id="change-function-button">
                     <img src="assets/hashtag.png">
                 </div>
-                <div id="add-button">
+                <div class="dm-tool" id="add-button">
                     <img src="assets/add.png">
                 </div>
 
@@ -38,17 +40,25 @@
             <div class="editor-el">
                 <div class="edit-color-text">Edit Color</div>
                 <div id="picker">
-                
+
                 </div>
             </div>
-            <div class="js-current-palette" id="current-palette"></div>
+            <div class="right-section">
+                <div class="js-current-palette" id="current-palette">
+            
+                </div>
+                <button class="dm-tool" id="download-button">
+                    <img src="assets/download.png">
+                </button>
+            </div>
+
         </div>
         <div class="your-collection-text">Your Collection
             <span class="inner-text">- click a color to copy to clipboard</span>
         </div>
         <div id="palette-collection"></div>
         <div id="footer">
-            <a href="https://github.com/bliu217/palette" target="_blank">GitHub</a>
+            <a id="github-link" href="https://github.com/bliu217/palette" target="_blank">GitHub</a>
         </div>
     </div>
 

@@ -64,6 +64,7 @@ saveButton.addEventListener('click', () => {
 addButton.addEventListener('click', () => {
     let colours = getCurrentColours();
     addPalette(colours);
+    selectPalette(paletteCollection.length - 1);
     renderCollection();
 });
 

@@ -1,5 +1,3 @@
-import { selectedColourContainer } from "./index.js";
-
 let defaultPalette = [
     {
         selected: false,

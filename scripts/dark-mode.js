@@ -5,7 +5,6 @@ const toolContainer = document.querySelector('.tool-container');
 let darkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
 
 export function enableDarkMode() {
-    console.log(darkMode);
     darkModeSwitch.checked = darkMode;
 
     switchMode();

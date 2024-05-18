@@ -16,6 +16,7 @@ import {
 } from "./picker.js";
 import { getInputs, rgbToHex } from "./hex.js";
 import { enableDarkMode } from "./dark-mode.js";
+import { download } from "./gen-image.js";
 
 const changeFunctionButton = document.getElementById('change-function-button');
 const saveButton = document.getElementById('save-button');
@@ -97,12 +98,12 @@ async function opacityAnimation() {
             clipboardMessage.style.opacity = opacity;
         }
     }
-    console.log(id);
 }
 
 enableDarkMode();
 renderCollection();
 renderSelectedPalette();
+download();
 
 
 function hexFunction() {

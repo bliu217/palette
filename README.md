@@ -21,8 +21,13 @@ Palette is a **Chrome extension** that allows you to:
 ---
 ### User Guide
 
-**General**
-To edit the current palette, you must first click on one of the 4 colour panels, and then change the colour via the Eyedropper, Hex/RGB Input, or Color Picker. To download the current palette (as 90 x 128 png), click the download icon below the current palette.
+**General**  
+- Editing:  
+    To edit the current palette, you must first click on one of the 4 colour panels, and then change the colour via the Eyedropper, Hex/RGB Input, or Color Picker. 
+- Downloading the current palette:  
+    To download the current palette (as 90 x 128 png), click the download icon below the current palette.
+- Switching themes:  
+    Click the switch in the top left of the extension to toggle between light and dark mode.
 
 **Tools (left side) in order:**
 - Save current palette (right of the 'Edit Color' section)

@@ -7,6 +7,7 @@ export function generatePicker() {
         width: 180,
         boxHeight: 140,
         sliderSize: 10,
+        color: '#f00',
         layout: [
             {
                 component: iro.ui.Box,
@@ -24,16 +25,34 @@ export function generatePicker() {
     });
 }
 
+export function regenPicker() {
+    return new iro.ColorPicker('#picker', {
+        width: 180,
+        boxHeight: 140,
+        sliderSize: 10,
+        color: selectedColourContainer.container.style.backgroundColor,
+        layout: [
+            {
+                component: iro.ui.Box,
+            },
+            {
+                component: iro.ui.Slider,
+                options: {
+                    id: 'hue-slider',
+                    sliderType: 'hue'
+                }
+            }
+        ]
+    }).on('color:change', function (color) {
+        changeColour(color.hexString);
+    });
+}
+
+
 export function compatibilityCheck() {
     if (window.EyeDropper == undefined) {
         console.error('EyeDropper API is not supported on this platform');
     }
-}
-
-export function changeColourWithBox() {
-    colorPicker.on('color:change', function (color) {
-        changeColour(color.hexString);
-    });
 }
 
 export function changeColour(colourString) {
@@ -43,5 +62,7 @@ export function changeColour(colourString) {
     }
 }
 
-
+function setPickerColour() {
+    colorPicker.color = selectedColourContainer.container.style.backgroundColor;
+}
 

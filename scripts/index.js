@@ -7,12 +7,11 @@ import {
     savePalette
 } from "./palette.js";
 import {
-    changeColourWithBox,
     eyeDropper,
     compatibilityCheck,
     changeColour,
-    colorPicker,
-    generatePicker
+    generatePicker,
+    regenPicker
 } from "./picker.js";
 import { getInputs, rgbToHex } from "./hex.js";
 import { enableDarkMode } from "./dark-mode.js";
@@ -157,6 +156,8 @@ function scaleContainer(index) {
             };
             colour.style.transform = "scale(1.2)";
             colour.style.zIndex = "2";
+            document.querySelector('.IroColorPicker').remove();
+            regenPicker();
         } else {
             colour.style.transform = "scale(1)";
             colour.style.zIndex = "1";

@@ -14,7 +14,7 @@ import {
     regenPicker
 } from "./picker.js";
 import { getInputs, rgbToHex } from "./hex.js";
-import { enableDarkMode } from "./dark-mode.js";
+import { enableDarkMode, refreshFunctionIcons } from "./dark-mode.js";
 import { download } from "./gen-image.js";
 
 const changeFunctionButton = document.getElementById('change-function-button');
@@ -42,8 +42,8 @@ eyeDropperButton.addEventListener('click', () => {
 changeFunctionButton.addEventListener('click', () => {
     useHex = !useHex;
     changeFunctionButton.innerHTML =
-        (useHex) ? '<img src="assets/palette.png">' : '<img src="assets/hashtag.png">';
-
+        (useHex) ? '<img id="dm-func" src="assets/palette.png">' : '<img id="dm-func" src="assets/hashtag.png">';
+    refreshFunctionIcons();
     if (useHex) {
         document.querySelector('.IroColorPicker').remove();
         hexFunction();
@@ -156,8 +156,10 @@ function scaleContainer(index) {
             };
             colour.style.transform = "scale(1.2)";
             colour.style.zIndex = "2";
-            document.querySelector('.IroColorPicker').remove();
-            regenPicker();
+            if (!useHex) {
+                document.querySelector('.IroColorPicker').remove();
+                regenPicker();
+            }
         } else {
             colour.style.transform = "scale(1)";
             colour.style.zIndex = "1";

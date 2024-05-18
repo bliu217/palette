@@ -69,3 +69,10 @@ function changeScroll() {
         }
     }
 }
+
+export function refreshFunctionIcons() {
+    if (darkMode) {
+        let img = document.getElementById('dm-func');
+        img.style.filter = "invert(1)"
+    }
+}
